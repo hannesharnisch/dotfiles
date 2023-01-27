@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
@@ -14,15 +14,15 @@ function doIt() {
 		--exclude "README.md" \
 		--exclude "LICENSE-MIT.txt" \
 		-avh --no-perms . ~;
-	source ~/.zsh_profile;
+	source ~/.zprofile;
 }
 
-if [ "$1" == "--force" -o "$1" == "-f" ]; then
+if [ "$1" = "--force" -o "$1" = "-f" ]; then
 	doIt;
 else
-	read -p "This may overwrite existing files in your home directory. Are you sure? (y/n) " -n 1;
+	read "continue?This may overwrite existing files in your home directory. Are you sure? (y/n) ";
 	echo "";
-	if [[ $REPLY =~ ^[Yy]$ ]]; then
+	if [[ $continue =~ ^[Yy]$ ]]; then
 		doIt;
 	fi;
 fi;
