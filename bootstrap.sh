@@ -11,6 +11,8 @@ function doIt() {
 		--exclude ".DS_Store" \
 		--exclude ".osx" \
 		--exclude "bootstrap.sh" \
+		--exclude "brew.sh" \
+		--exclude ".macos" \
 		--exclude "README.md" \
 		--exclude "LICENSE-MIT.txt" \
 		-avh --no-perms . ~;
@@ -28,5 +30,10 @@ else
 fi;
 unset doIt;
 
-zsh ./brew.sh
-zsh ./.macos
+read "continue?This will install applications and change macos defaults. Are you sure? (y/n) ";
+echo "";
+if [[ $continue =~ ^[Yy]$ ]]; then
+	osascript -e 'tell app "Terminal"
+		do script "cd ~/dotfiles;./brew.sh;./.macos"
+	end tell'
+fi;
