@@ -1,0 +1,37 @@
+###############################################################################
+# Energy saving                                                               #
+###############################################################################
+
+- name: Enable lid wakeup
+  shell: pmset -a lidwake 1
+  become: true
+
+- name: Restart automatically on power loss
+  shell: pmset -a autorestart 1
+  become: true
+
+- name: Restart automatically if the computer freezes
+  shell: systemsetup -setrestartfreeze on
+  become: true
+
+- name: Sleep the display after period of time
+  shell: "pmset -a displaysleep {{ energy.displaySleepAfter }}"
+  become: true
+
+- name: Disable machine sleep while charging
+  shell: "pmset -c sleep 0"
+  become: true
+  when: energy.disableSleepOnCharge
+
+- name: Set machine sleep on battery
+  shell: "pmset -b sleep {{ energy.sleepAfter }}"
+  become: true
+
+- name: Set standby delay
+  shell: "pmset -a standbydelay {{ energy.standbyDelay * 3600 }}"
+  become: true
+
+- name: Never go into computer sleep mode
+  shell: systemsetup -setcomputersleep Off > /dev/null
+  become: true
+  when: energy.disableSleepMode

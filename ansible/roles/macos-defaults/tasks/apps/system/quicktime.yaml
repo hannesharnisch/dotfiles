@@ -1,0 +1,7 @@
+- name: Auto-play videos when opened with QuickTime Player
+  community.general.osx_defaults:
+    domain: com.apple.QuickTimePlayerX
+    key: MGPlayMovieOnOpen
+    type: bool
+    value: true
+    state: present

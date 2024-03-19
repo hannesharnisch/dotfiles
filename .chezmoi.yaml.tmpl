@@ -1,0 +1,4 @@
+{{ $name := promptString "Full Name" -}}
+data:
+    user:
+        name: {{ $name | quote }}

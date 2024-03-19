@@ -1,0 +1,176 @@
+- name: "Allow quitting via ⌘ + Q; doing so will also hide desktop icons"
+  community.general.osx_defaults:
+    domain: com.apple.finder
+    key: QuitMenuItem
+    type: bool
+    value: true
+    state: present
+
+- name: Enable Opening Finder at custom FolderPath
+  community.general.osx_defaults:
+    domain: com.apple.finder
+    key: NewWindowTarget
+    type: string
+    value: "PfLo"
+    state: present
+
+- name: Set the default location for new Finder windows
+  community.general.osx_defaults:
+    domain: com.apple.finder
+    key: NewWindowTargetPath
+    type: string
+    value: "{{ finder.newWindowPath }}"
+    state: present
+
+- name: Show icons for hard drives, servers, and removable media on the desktop
+  community.general.osx_defaults:
+    domain: com.apple.finder
+    key: "{{ item }}"
+    type: bool
+    value: "{{ finder.desktop.showDriveIcons }}"
+    state: present
+  with_items:
+      - ShowExternalHardDrivesOnDesktop
+      - ShowHardDrivesOnDesktop
+      - ShowMountedServersOnDesktop
+      - ShowRemovableMediaOnDesktop
+
+- name: Show hidden files and filename extensions
+  community.general.osx_defaults:
+    domain: com.apple.finder
+    key: "{{ item }}"
+    type: bool
+    value: "{{ finder.showAllFiles }}"
+    state: present
+  with_items:
+    - AppleShowAllFiles
+    - AppleShowAllExtensions
+
+- name: Show Status bar
+  community.general.osx_defaults:
+    domain: com.apple.finder
+    key: ShowStatusBar
+    type: bool
+    value: true
+    state: present
+
+- name: Show Path Bar
+  community.general.osx_defaults:
+    domain: com.apple.finder
+    key: ShowPathbar
+    type: bool
+    value: "{{ finder.showPathInTitle }}"
+    state: present
+
+- name: Display full POSIX path as Finder window title
+  community.general.osx_defaults:
+    domain: com.apple.finder
+    key: _FXShowPosixPathInTitle
+    type: bool
+    value: "{{ finder.showPathInTitle }}"
+    state: present
+
+- name: Keep folders on top when sorting by name
+  community.general.osx_defaults:
+    domain: com.apple.finder
+    key: _FXSortFoldersFirst
+    type: bool
+    value: "{{ finder.foldersToTop }}"
+    state: present
+
+- name: Setting the Search Scope in Finder
+  community.general.osx_defaults:
+    domain: com.apple.finder
+    key: FXDefaultSearchScope
+    type: string
+    value: "{{ finder.searchScope }}"
+    state: present
+
+- name: Disable the warning when changing a file extension
+  community.general.osx_defaults:
+    domain: com.apple.finder
+    key: FXEnableExtensionChangeWarning
+    type: bool
+    value: false
+    state: present
+
+- name: Enable spring loading for directories
+  community.general.osx_defaults:
+    domain: NSGlobalDomain
+    key: com.apple.springing.enabled
+    type: bool
+    value: true
+    state: present
+
+- name: Remove the spring loading delay for directories
+  community.general.osx_defaults:
+    domain: NSGlobalDomain
+    key: com.apple.springing.delay
+    type: float
+    value: 0
+    state: present
+
+- name: Remove the spring loading delay for directories
+  community.general.osx_defaults:
+    domain: com.apple.desktopservices
+    key: "{{ item }}"
+    type: bool
+    value: true
+    state: present
+  with_items:
+    - DSDontWriteNetworkStores
+    - DSDontWriteUSBStores
+
+- name: Show item info near icons on the desktop and in other icon views
+  shell: /usr/libexec/PlistBuddy -c "{{ item }} {{ finder.desktop.showItemInfo }}" ~/Library/Preferences/com.apple.finder.plist
+  with_items:
+    - "Set :DesktopViewSettings:IconViewSettings:showItemInfo"
+    - "Set :FK_StandardViewSettings:IconViewSettings:showItemInfo"
+    - "Set :StandardViewSettings:IconViewSettings:showItemInfo"
+
+- name: Enable snap-to-grid for icons on the desktop and in other icon views
+  shell: /usr/libexec/PlistBuddy -c "{{ item }} {{ finder.desktop.layout }}" ~/Library/Preferences/com.apple.finder.plist
+  with_items:
+    - "Set :DesktopViewSettings:IconViewSettings:arrangeBy"
+    - "Set :FK_StandardViewSettings:IconViewSettings:arrangeBy"
+    - "Set :StandardViewSettings:IconViewSettings:arrangeBy"
+
+- name: Set grid spacing for icons on the desktop and in other icon views
+  shell: /usr/libexec/PlistBuddy -c "{{ item }} {{ finder.desktop.gridSpacing }}" ~/Library/Preferences/com.apple.finder.plist
+  with_items:
+    - "Set :DesktopViewSettings:IconViewSettings:gridSpacing"
+    - "Set :FK_StandardViewSettings:IconViewSettings:gridSpacing"
+    - "Set :StandardViewSettings:IconViewSettings:gridSpacing"
+
+- name: Set the size of icons on the desktop and in other icon views
+  shell: /usr/libexec/PlistBuddy -c "{{ item }} {{ finder.desktop.iconSize }}" ~/Library/Preferences/com.apple.finder.plist
+  with_items:
+    - "Set :DesktopViewSettings:IconViewSettings:iconSize"
+    - "Set :FK_StandardViewSettings:IconViewSettings:iconSize"
+    - "Set :StandardViewSettings:IconViewSettings:iconSize"
+
+- name: Set Default View Mode for all Finder windows
+  community.general.osx_defaults:
+    domain: com.apple.finder
+    key: FXPreferredViewStyle
+    type: string
+    value: "{{ finder.viewMode }}"
+    state: present
+
+- name: Disable the warning before emptying the Trash
+  community.general.osx_defaults:
+    domain: com.apple.finder
+    key: WarnOnEmptyTrash
+    type: bool
+    value: false
+    state: present
+  when: finder.disableTrashEmptyWarning
+
+- name: Show the ~/Library folder
+  shell: chflags nohidden ~/Library && xattr -d com.apple.FinderInfo ~/Library
+  ignore_errors: true
+  become: true
+
+- name: Show the /Volumes folder
+  shell: chflags nohidden /Volumes
+  become: true

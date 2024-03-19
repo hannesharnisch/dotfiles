@@ -1,0 +1,32 @@
+dock:
+  autoHide: true
+  tileSize: 45
+  magnifiedTileSize: 68
+  minimizeWindow:
+    effect: "trichter"
+    intoApp: true
+  springLoading: true
+  processIndicators: true
+  animateAppLaunch: true
+  showHidden: true
+  showRecent: false
+  missionControl:
+    animationTime: 0.1
+    groupByApp: true
+  spaces:
+    autoRearrange: false
+  apps:
+    - "file://{{ HOME }}/Applications/Arc.app"
+    - "file://{{ HOME }}/Applications/Morgen.app"
+    - "file:///Applications/Goodnotes.app"
+    - "file:///System/Applications/Notes.app/"
+    - "file:///System/Applications/Utilities/Terminal.app"
+  folders:
+    - name: "file:///{{ HOME }}/Documents/"
+      view: "list" # grid|fan|list|auto
+      display: "folder" # folder|stack
+      sort: "datemodified" # name|dateadded|datemodified|datecreated|kind
+    - name: "file:///{{ HOME }}/Downloads/"
+      view: "fan" # grid|fan|list|auto
+      display: "stack" # folder|stack
+      sort: "dateadded" # name|dateadded|datemodified|datecreated|kind

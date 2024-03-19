@@ -1,15 +1,12 @@
 # 'brew tap'
 tap "homebrew/bundle"
 
-# set arguments for all 'brew install --cask' commands
-cask_args appdir: "~/Applications", require_sha: true
-
 # Installing Docker
 cask "docker"
 
 brew "whalebrew" # Whalebrew
 brew "mas" # Appstore CLI
-brew "stow" # Stow for syncing dotfiles
+brew "chezmoi" # Chezmoi for syncing dotfiles
 
 # Installing core commands
 brew "xz"
@@ -26,6 +23,7 @@ brew "tree"
 brew "findutils"
 brew "coreutils"
 brew "moreutils"
+brew "dockutil"
 brew "foremost"
 brew "netcat"
 brew "wget"
@@ -33,12 +31,14 @@ brew "curl"
 brew "nmap"
 
 cask "arc" # Arc Browser
-cask "1password" # 1Password
 cask "grandperspective" # GrandPerspective
+cask "1password" # 1Password
+cask "1password-cli"
 
 # Productivity
 cask "morgen" # Calendar, tasks and scheduler
 cask "notion"
+cask "webex"
 
 # Microsoft Office
 cask "microsoft-auto-update"
@@ -53,7 +53,6 @@ cask "intellij-idea"
 cask "android-studio"
 brew "kotlin"
 brew "kdoctor"
-brew "swiftlint"
 brew "cocoapods"
 brew "cmake"
 brew "nvm"
@@ -61,9 +60,13 @@ brew "openjdk@17"
 brew "go"
 brew "python@3.11"
 mas "Xcode", id: 497799835
+brew "swiftlint"
+
+# Zed Editor
+cask "zed"
 
 # Visual Studio Code
-cask "visual-studio-code" 
+cask "visual-studio-code"
 vscode "dbaeumer.vscode-eslint"
 vscode "eamodio.gitlens"
 vscode "esbenp.prettier-vscode"

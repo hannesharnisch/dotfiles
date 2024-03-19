@@ -1,0 +1,15 @@
+- name: Enable Secure Keyboard Entry in Terminal.app
+  community.general.osx_defaults:
+    domain: com.apple.terminal
+    key: SecureKeyboardEntry
+    type: bool
+    value: true
+    state: present
+
+- name: Disable the line marks
+  community.general.osx_defaults:
+    domain: com.apple.terminal
+    key: ShowLineMarks
+    type: int
+    value: 0
+    state: present

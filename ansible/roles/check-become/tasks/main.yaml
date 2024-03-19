@@ -1,0 +1,5 @@
+- command: echo "Password verified"
+  become: true
+  become_user: root
+  become_method: sudo
+  timeout: 2

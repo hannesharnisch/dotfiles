@@ -1,0 +1,2 @@
+- name: Install Homebrew Bundle
+  shell: brew bundle install -f --cleanup

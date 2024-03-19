@@ -1,0 +1,8 @@
+- include_tasks: system/finder.yaml
+- include_tasks: system/terminal.yaml
+- include_tasks: system/time_machine.yaml
+- include_tasks: system/activity_monitor.yaml
+- include_tasks: system/disk_utility.yaml
+- include_tasks: system/quicktime.yaml
+- include_tasks: system/app_store.yaml
+- include_tasks: system/photos.yaml

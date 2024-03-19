@@ -124,10 +124,20 @@
 	changed = green
 	untracked = cyan
 
-[commit]
+[user]
+  name = {{ .user.name }}
+  email = {{ onepasswordRead "op://Personal/Github-Key/E-Mail" }}
+  signingkey = {{ onepasswordRead "op://Personal/Github-Key/public key" }}
 
-	# https://help.github.com/articles/signing-commits-using-gpg/
-	gpgsign = true
+[gpg]
+  format = ssh
+
+[gpg "ssh"]
+  program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+
+[commit]
+  gpgsign = true
+
 
 [diff]
 

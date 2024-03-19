@@ -1,0 +1,14 @@
+
+- name: Get Home Directory
+  shell: echo $HOME
+  register: home_dir
+
+- name: Setting home directory variable
+  ansible.builtin.set_fact:
+    HOME: "{{ home_dir.stdout }}"
+
+- name: Print all variables
+  debug:
+    msg: "{{ item }}: {{ vars[item] }}"
+  with_items:
+    - HOME

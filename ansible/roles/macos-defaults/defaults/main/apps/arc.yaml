@@ -1,0 +1,8 @@
+arc:
+  - key: tidyTabsEnabled
+  - key: renamePinnedTabsEnabled
+  - key: renameDownloadsEnabled
+  - key: instantLinksEnabled
+  - key: hoverCardsEnabled
+  - key: gptSiteSearchEnabled
+  - key: askOnPageEnabled

@@ -1,9 +1,0 @@
-\.git
-\.gitignore
-
-^/bootstrap.sh
-^/Brewfile
-^/Brewfile.lock.json
-
-^/README.md
-\.macos

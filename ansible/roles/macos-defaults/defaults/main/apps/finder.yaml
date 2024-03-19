@@ -1,0 +1,14 @@
+finder:
+  newWindowPath: "file://{{ HOME }}/"
+  showAllFiles: true
+  showPathInTitle: true
+  foldersToTop: true
+  searchScope: "SCcf"
+  viewMode: "Nlsv" # Other view modes: `icnv`, `clmv`, `glyv`
+  disableTrashEmptyWarning: true
+  desktop:
+    layout: grid
+    gridSpacing: 80
+    iconSize: 60
+    showDriveIcons: true
+    showItemInfo: true

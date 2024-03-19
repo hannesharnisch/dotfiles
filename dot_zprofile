@@ -18,7 +18,7 @@ setopt CSH_NULL_GLOB;
 setopt APPEND_HISTORY;
 
 # Autocorrect typos in path names when using `cd`
-shopt -s cdspell;
+#shopt -s cdspell;
 
 # Add NVM
 export NVM_DIR="$HOME/.nvm"

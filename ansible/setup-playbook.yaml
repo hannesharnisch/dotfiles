@@ -1,0 +1,7 @@
+- name: Setup Mac
+  hosts: localhost
+  roles:
+    - check-become
+    - elliotweiser.osx-command-line-tools
+    - homebrew-bundle
+    - macos-defaults

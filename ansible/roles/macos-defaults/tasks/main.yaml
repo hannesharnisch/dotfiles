@@ -1,0 +1,15 @@
+- name: "Quit System Preferences"
+  shell: osascript -e 'tell application "System Preferences" to quit'
+
+- include_tasks: set_variables.yaml
+
+# General MacOS settings
+- include_tasks: macos-general/general_ui.yaml
+- include_tasks: macos-general/input.yaml
+- include_tasks: macos-general/energy_saving.yaml
+- include_tasks: macos-general/screensaver.yaml
+- include_tasks: macos-general/dock.yaml
+
+# Setting up Apps
+- include_tasks: apps/system_apps.yaml
+- include_tasks: apps/other.yaml

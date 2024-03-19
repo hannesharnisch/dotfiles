@@ -1,19 +1,25 @@
-# Hannes' dotfiles
+# Hannes' Dotfiles
 
-## Installation
+The following git repositoriy contains dotfiles for setting up my macbook with the [chezmoi](https://www.chezmoi.io/) dotfile manager. 
 
-### Using Git and the bootstrap script
+## Quick Start
 
-You can clone the repository wherever you want. (I like to keep it in `~/Projects/dotfiles`, with `~/dotfiles` as a symlink.) The bootstrapper script will pull in the latest version and copy the files to your home folder.
+**One line install**
 
-```bash
-git clone https://github.com/hannesharnisch/dotfiles.git && cd dotfiles && ./bootstrap.sh
+```
+sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply hannesharnisch
 ```
 
-### Git-free install
+**Other options**
 
-To install these dotfiles without Git:
+For other options please look at [this guide](https://www.chezmoi.io/quick-start/).
 
-```bash
-cd; mkdir dotfiles; cd dotfiles; curl -#L https://github.com/hannesharnisch/dotfiles/tarball/main | tar -xzv --strip-components 1; ./bootstrap.sh;
-```
+
+## Description
+
+Appart from the dotfiles which are managed by chezmoi. The `run_before_setup` skript contains all the necessary steps to install ansible and execute the ansible playbook that installs and configures the applications. 
+The installation is done via Brewfile and the configuration with an extensive list of macos-defaults.
+
+The Brewfile with all the applications can be found under the ansible folder. 
+
+Most user specific application and macos settings can be directly accessed in the macos-defaults/defaults under the ansible folder. 

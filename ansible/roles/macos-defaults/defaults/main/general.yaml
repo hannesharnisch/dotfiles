@@ -1,0 +1,26 @@
+tapToClick: true
+ui:
+  accentColor: 1 # Orange
+  highlightColor: "1.000000 0.874510 0.701961 Orange"
+  sidebarIconSize: 2
+  resizeTime: 0.001
+screenshots:
+  location: "{{ HOME }}/Desktop"
+  format: "png"
+  disableShadow: true
+energy:
+  displaySleepAfter: 15 # Time in Minutes
+  sleepAfter: 2 # Time in Minutes
+  disableSleepOnCharge: true
+  standbyDelay: 24 # Hours
+  disableSleepMode: true
+  screensaver:
+    askForPassword: true
+    passwordDelay: 0
+location:
+  languages:
+    - de
+    - en
+  locale: "de_DE"
+  currency: "EUR"
+  useMetric: true

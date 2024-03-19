@@ -1,0 +1,163 @@
+- name: Add Hot Corners
+  community.general.osx_defaults:
+    domain: com.apple.dock
+    key: "wvous-{{ item.corner }}-corner"
+    type: int
+    value: "{{ item.action }}"
+    state: present
+  with_items: "{{ hotCorners }}"
+
+- name: Add Hot Corners Key Modifier
+  community.general.osx_defaults:
+    domain: com.apple.dock
+    key: "wvous-{{ item.corner }}-modifier"
+    type: int
+    value: "{{ item.key | default(0) }}"
+    state: present
+  with_items: "{{ hotCorners }}"
+
+- name: Automatically hide and show the Dock
+  community.general.osx_defaults:
+    domain: com.apple.dock
+    key: autohide
+    type: bool
+    value: "{{ dock.autoHide }}"
+    state: present
+
+- name: Remove the auto-hiding Dock delay
+  community.general.osx_defaults:
+    domain: com.apple.dock
+    key: autohide-delay
+    type: float
+    value: 0
+    state: present
+
+- name: Reduce the animation when hiding/showing the Dock
+  community.general.osx_defaults:
+    domain: com.apple.dock
+    key: autohide-time-modifier
+    type: float
+    value: 0.25
+    state: present
+
+- name: Set the icon size of Dock items
+  community.general.osx_defaults:
+    domain: com.apple.dock
+    key: tilesize
+    type: float
+    value: "{{ dock.tileSize }}"
+    state: present
+
+- name: Set magnification on Dock
+  community.general.osx_defaults:
+    domain: com.apple.dock
+    key: magnification
+    type: bool
+    value: true
+    state: present
+  when: dock.magnifiedTileSize != dock.tileSize
+
+- name: Set largesize on Dock (magnification size)
+  community.general.osx_defaults:
+    domain: com.apple.dock
+    key: largesize
+    type: int
+    value: "{{ dock.magnifiedTileSize }}"
+    state: present
+  when: dock.magnifiedTileSize != dock.tileSize
+
+- name: Change minimize/maximize window effect
+  community.general.osx_defaults:
+    domain: com.apple.dock
+    key: mineffect
+    type: string
+    value: "{{ dock.minimizeWindow.effect }}"
+    state: present
+
+- name: Minimize windows into their application’s icon
+  community.general.osx_defaults:
+    domain: com.apple.dock
+    key: minimize-to-application
+    type: bool
+    value: "{{ dock.minimizeWindow.intoApp }}"
+    state: present
+
+- name: Set spring loading for all Dock items
+  community.general.osx_defaults:
+    domain: com.apple.dock
+    key: enable-spring-load-actions-on-all-items
+    type: bool
+    value: "{{ dock.springLoading }}"
+    state: present
+
+- name: Show indicator lights for open applications in the Dock
+  community.general.osx_defaults:
+    domain: com.apple.dock
+    key: show-process-indicators
+    type: bool
+    value: "{{ dock.processIndicators }}"
+    state: present
+
+- name: Emptying Dock
+  shell: dockutil --remove all --no-restart
+
+- name: Setting Apps in Dock
+  shell: "dockutil -a {{ item }} --section apps --no-restart"
+  with_items: "{{ dock.apps }}"
+
+- name: Setting Folders in Dock
+  shell: "dockutil -a {{ item.name }} --view {{ item.view }} --display {{ item.display }} --sort {{ item.sort }} --section others --no-restart"
+  with_items: "{{ dock.folders }}"
+
+- name: Restart Dock
+  shell: "killall Dock"
+
+- name: Animate opening applications from the Dock
+  community.general.osx_defaults:
+    domain: com.apple.dock
+    key: launchanim
+    type: bool
+    value: "{{ dock.animateAppLaunch }}"
+    state: present
+
+- name: Set Mission Control animations speed
+  community.general.osx_defaults:
+    domain: com.apple.dock
+    key: expose-animation-duration
+    type: float
+    value: "{{ dock.missionControl.animationTime }}"
+    state: present
+
+- name: Set Group windows by application in Mission Control
+  community.general.osx_defaults:
+    domain: com.apple.dock
+    key: expose-group-by-app
+    type: bool
+    value: "{{ dock.missionControl.groupByApp }}"
+    state: present
+
+- name: Disable automatically rearrange Spaces based on most recent use
+  community.general.osx_defaults:
+    domain: com.apple.dock
+    key: mru-spaces
+    type: bool
+    value: false
+    state: present
+  when: not dock.spaces.autoRearrange
+
+- name: Make Dock icons of hidden applications translucent
+  community.general.osx_defaults:
+    domain: com.apple.dock
+    key: showhidden
+    type: bool
+    value: true
+    state: present
+  when: dock.showHidden
+
+- name: Show recent applications in Dock
+  community.general.osx_defaults:
+    domain: com.apple.dock
+    key: show-recents
+    type: bool
+    value: "{{ dock.showRecent }}"
+    state: present

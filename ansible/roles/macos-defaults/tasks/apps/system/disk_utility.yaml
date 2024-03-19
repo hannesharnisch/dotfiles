@@ -1,0 +1,10 @@
+- name: Enable the debug menu in Disk Utility
+  community.general.osx_defaults:
+    domain: com.apple.DiskUtility
+    key: "{{ item }}"
+    type: bool
+    value: true
+    state: present
+  with_items:
+    - DUDebugMenuEnabled
+    - advanced-image-options

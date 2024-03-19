@@ -1,0 +1,19 @@
+- name: Check existence of paths
+  stat:
+    path: "{{ item }}"
+  register: homebrew_path
+  ignore_errors: True
+  failed_when: false
+  with_first_found:
+    - /opt/homebrew/bin/brew
+    - /usr/local/bin/brew
+    - /home/linuxbrew/.linuxbrew/bin/brew
+
+- name: Print Homebrew Path
+  debug:
+    msg: "Homebrew installed? {{ (homebrew_path.results | selectattr('stat.exists', 'defined') | first).stat.exists }}"
+
+- name: Installing Homebrew
+  shell: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  when:
+    - not (homebrew_path.results | selectattr('stat.exists', 'defined') | first).stat.exists
