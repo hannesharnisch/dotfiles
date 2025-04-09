@@ -6,29 +6,27 @@ cask "docker"
 
 brew "whalebrew" # Whalebrew
 brew "mas" # Appstore CLI
+
+# Important for playbooks
 brew "chezmoi" # Chezmoi for syncing dotfiles
+brew "dockutil"
 
 # Installing core commands
-brew "xz"
-brew "ack"
 brew "git"
 brew "grep"
 brew "gnutls"
 brew "gnupg"
 brew "git-lfs"
 brew "screen"
-brew "exiftool"
-brew "exiv2"
 brew "tree"
 brew "findutils"
 brew "coreutils"
 brew "moreutils"
-brew "dockutil"
 brew "foremost"
 brew "netcat"
 brew "wget"
 brew "curl"
-brew "nmap"
+whalebrew "whalebrew/nmap"
 
 cask "arc" # Arc Browser
 cask "grandperspective" # GrandPerspective
@@ -36,11 +34,11 @@ cask "1password" # 1Password
 cask "1password-cli"
 
 # Productivity
-cask "morgen" # Calendar, tasks and scheduler
 cask "notion"
 cask "webex"
-cask "anki"
 cask "lm-studio"
+cask "zotero"
+
 
 # Microsoft Office
 cask "microsoft-auto-update"
