@@ -39,6 +39,8 @@ cask "1password-cli"
 cask "morgen" # Calendar, tasks and scheduler
 cask "notion"
 cask "webex"
+cask "anki"
+cask "lm-studio"
 
 # Microsoft Office
 cask "microsoft-auto-update"

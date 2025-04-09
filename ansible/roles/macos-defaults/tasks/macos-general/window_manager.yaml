@@ -1,0 +1,58 @@
+- name: Set drag to edge tiling options
+  community.general.osx_defaults:
+    domain: com.apple.WindowManager
+    key: "{{ item.key }}"
+    type: bool
+    value: "{{ windowManager.enableDragTiling }}"
+  loop:
+    - { key: EnableTilingByEdgeDrag }
+    - { key: EnableTopTilingByEdgeDrag }
+
+- name: Enable Tiled Window Margins
+  community.general.osx_defaults:
+    domain: com.apple.WindowManager
+    key: EnableTiledWindowMargins
+    type: bool
+    value: "{{ windowManager.setTiledWindowMargins }}"
+
+- name: Set AppWindowGroupingBehavior
+  community.general.osx_defaults:
+    domain: com.apple.WindowManager
+    key: AppWindowGroupingBehavior
+    type: int
+    value: "{{ windowManager.stageManager.appsWindowGrouping }}"
+
+- name: Autohide Stagemanager Stage
+  community.general.osx_defaults:
+    domain: com.apple.WindowManager
+    key: AutoHide
+    type: bool
+    value: "{{ windowManager.stageManager.autoHideStage }}"
+
+- name: Enable Stagemanager
+  community.general.osx_defaults:
+    domain: com.apple.WindowManager
+    key: GloballyEnabled
+    type: bool
+    value: "{{ windowManager.stageManager.enabled }}"
+
+- name: Hide Desktop Items when using Stage Manager
+  community.general.osx_defaults:
+    domain: com.apple.WindowManager
+    key: HideDesktop
+    type: bool
+    value: "{{ windowManager.stageManager.hideDesktop }}"
+
+- name: Hide Widgets when using Stage Manager
+  community.general.osx_defaults:
+    domain: com.apple.WindowManager
+    key: StageManagerHideWidgets
+    type: bool
+    value: "{{ windowManager.stageManager.hideDesktopWidgets }}"
+
+- name: Hide Widgets on Desktop
+  community.general.osx_defaults:
+    domain: com.apple.WindowManager
+    key: StandardHideWidgets
+    type: bool
+    value: "{{ windowManager.hideDesktopWidgets }}"

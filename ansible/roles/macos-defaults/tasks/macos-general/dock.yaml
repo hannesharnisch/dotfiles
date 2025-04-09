@@ -109,9 +109,6 @@
   shell: "dockutil -a {{ item.name }} --view {{ item.view }} --display {{ item.display }} --sort {{ item.sort }} --section others --no-restart"
   with_items: "{{ dock.folders }}"
 
-- name: Restart Dock
-  shell: "killall Dock"
-
 - name: Animate opening applications from the Dock
   community.general.osx_defaults:
     domain: com.apple.dock
@@ -161,3 +158,6 @@
     type: bool
     value: "{{ dock.showRecent }}"
     state: present
+
+- name: Restart Dock
+  shell: "killall Dock"

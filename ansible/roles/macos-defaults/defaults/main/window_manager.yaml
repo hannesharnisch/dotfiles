@@ -1,0 +1,10 @@
+windowManager:
+  enableDragTiling: false
+  hideDesktopWidgets: false
+  setTiledWindowMargins: true
+  stageManager:
+    enabled: true
+    appsWindowGrouping: 1
+    autoHideStage: false
+    hideDesktop: true
+    hideDesktopWidgets: false

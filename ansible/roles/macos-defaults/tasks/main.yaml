@@ -8,6 +8,7 @@
 - include_tasks: macos-general/input.yaml
 - include_tasks: macos-general/energy_saving.yaml
 - include_tasks: macos-general/screensaver.yaml
+- include_tasks: macos-general/window_manager.yaml
 - include_tasks: macos-general/dock.yaml
 
 # Setting up Apps
