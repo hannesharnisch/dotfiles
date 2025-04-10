@@ -1,10 +1,17 @@
 #!/bin/bash
+set -e
+
 # Install ansible
-python3 -m pip install --upgrade pip
-python3 -m pip install ansible
+echo "Installing ansible..."
+python3 -m pip install --upgrade pip --quiet
+python3 -m pip install ansible --quiet
 
 DOTFILES_DIR="{{ .chezmoi.sourceDir }}"
+
 # Execute ansible setup playbook
 cd $DOTFILES_DIR/ansible
 ansible-galaxy install -r requirements.yaml
+
+echo "Executing ansible setup playbook..."
+echo "You may need to insert your sudo password \n"
 ansible-playbook setup-playbook.yaml --ask-become-pass
