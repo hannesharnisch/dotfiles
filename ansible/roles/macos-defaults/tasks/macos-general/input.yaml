@@ -76,11 +76,3 @@
     type: bool
     value: "{{ location.useMetric }}"
     state: present
-
-- name: Show language menu in the top right corner of the boot screen
-  community.general.osx_defaults:
-    domain: /Library/Preferences/com.apple.loginwindow
-    key: showInputMenu
-    type: bool
-    value: true
-    state: present
