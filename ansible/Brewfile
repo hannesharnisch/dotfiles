@@ -1,10 +1,6 @@
-# 'brew tap'
-tap "homebrew/bundle"
-
 # Installing Docker
 cask "docker"
 
-brew "whalebrew" # Whalebrew
 brew "mas" # Appstore CLI
 
 # Important for playbooks
@@ -26,7 +22,6 @@ brew "foremost"
 brew "netcat"
 brew "wget"
 brew "curl"
-whalebrew "whalebrew/nmap"
 
 cask "arc" # Arc Browser
 cask "grandperspective" # GrandPerspective
