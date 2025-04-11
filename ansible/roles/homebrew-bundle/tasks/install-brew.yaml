@@ -16,3 +16,7 @@
 - name: Installing Homebrew
   shell: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   when: not homebrew_path.stat.exists | default(false)
+
+- name: Add Homebrew path
+  shell: echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile && eval "$(/opt/homebrew/bin/brew shellenv)"
+  when: not homebrew_path.stat.exists | default(false)
