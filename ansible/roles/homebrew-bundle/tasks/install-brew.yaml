@@ -11,9 +11,8 @@
 
 - name: Print Homebrew Path
   debug:
-    msg: "Homebrew installed? {{ (homebrew_path.results | selectattr('stat.exists', 'defined') | first).stat.exists }}"
+    msg: "Homebrew installed? {{ homebrew_path.stat.exists | default(false) }}"
 
 - name: Installing Homebrew
   shell: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-  when:
-    - not (homebrew_path.results | selectattr('stat.exists', 'defined') | first).stat.exists
+  when: not homebrew_path.stat.exists | default(false)
