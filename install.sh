@@ -3,7 +3,7 @@
 # Installing Xcode command line tools
 xcode-select --install
 # Accept License
-sudo xcodebuild -license
+sudo xcodebuild -license accept
 # Confirm install
 echo "Command line tools installation path: $(xcode-select -p)"
 
