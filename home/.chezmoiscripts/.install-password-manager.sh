@@ -1,7 +1,7 @@
 #!/bin/sh
 
+echo "Checking if Passwordmanager needs to be installed"
 # exit immediately if password-manager-binary is already in $PATH
-
 type op >/dev/null 2>&1 && exit
 echo "Installing Passwordmanager"
 case "$(uname -s)" in
