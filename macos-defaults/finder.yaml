@@ -1,0 +1,35 @@
+---
+description: Finder
+sudo: false
+current_host: false
+kill: ["Finder"]
+data:
+  com.apple.finder:
+    AppleShowAllExtensions: true
+    AppleShowAllFiles: true
+    DesktopViewSettings:
+      IconViewSettings:
+        gridSpacing: 80.0
+        showItemInfo: true
+        viewOptionsVersion: 1
+        labelOnBottom: true
+        arrangeBy: grid
+        showIconPreview: true
+        iconSize: 60.0
+    FXArrangeGroupViewBy: Name
+    FXDefaultSearchScope: SCcf
+    FXICloudDriveDesktop: true
+    FXICloudDriveDocuments: true
+    FXICloudDriveEnabled: true
+    FXPreferredViewStyle: Nls
+    NewWindowTarget: PfLo
+    NewWindowTargetPath: "file:///~/"
+    QuitMenuItem: true
+    ShowExternalHardDrivesOnDesktop: true
+    ShowMountedServersOnDesktop: true
+    ShowPathbar: true
+    ShowRemovableMediaOnDesktop: true
+    ShowStatusBar: true
+    WarnOnEmptyTrash: false
+    _FXShowPosixPathInTitle: true
+    _FXSortFoldersFirst: true

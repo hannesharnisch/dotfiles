@@ -1,0 +1,16 @@
+---
+description: WindowManager / Stagemanager
+sudo: false
+current_host: false
+data:
+  com.apple.WindowManager:
+    AppWindowGroupingBehavior: 1
+    AutoHide: false
+    EnableTiledWindowMargins: true
+    EnableTilingByEdgeDrag: false
+    EnableTopTilingByEdgeDrag: false
+    GloballyEnabled: true
+    GloballyEnabledEver: true
+    HideDesktop: true
+    StageManagerHideWidgets: false
+    StandardHideWidgets: false

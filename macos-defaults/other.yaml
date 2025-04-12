@@ -1,0 +1,25 @@
+---
+description: Other Application settings
+sudo: false
+current_host: false
+data:
+  com.apple.photos.shareddefaults:
+    downloadAndKeepOriginals: true
+  com.apple.DiskUtility:
+    DUDebugMenuEnabled: true
+    advanced-image-options: true
+  com.apple.TimeMachine:
+    DoNotOfferNewDisksForBackup: true
+  com.apple.ActivityMonitor:
+    IconType: 5
+    OpenMainWindow: true
+    ShowCategory: 0
+    SortColumn: CPUUsage
+    SortDirection: 0
+  com.apple.screencapture:
+    disable-shadow: true
+    location: /~/Downloads
+    type: png
+  com.apple.screensaver:
+    askForPassword: 1
+    askForPasswordDelay: 0

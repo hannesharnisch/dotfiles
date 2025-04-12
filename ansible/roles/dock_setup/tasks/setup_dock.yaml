@@ -1,0 +1,10 @@
+- name: Emptying Dock
+  shell: dockutil --remove all --no-restart
+
+- name: Setting Apps in Dock
+  shell: "dockutil -a {{ item }} --section apps --no-restart"
+  with_items: "{{ apps }}"
+
+- name: Setting Folders in Dock
+  shell: "dockutil -a {{ item.name }} --view {{ item.view }} --display {{ item.display }} --sort {{ item.sort }} --section others --no-restart"
+  with_items: "{{ folders }}"

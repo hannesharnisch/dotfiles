@@ -1,0 +1,14 @@
+- name: Check if dockutil is installed
+  command: which dockutil
+  register: dockutil_installed
+  ignore_errors: yes
+
+- name: Fail if dockutil is not installed
+  fail:
+    msg: "dockutil is not installed"
+  when: dockutil_installed.rc != 0
+
+- include_tasks: setup_dock.yaml
+
+- name: Restart Dock
+  shell: "killall Dock"

@@ -1,0 +1,22 @@
+---
+description: Arc Browser
+sudo: false
+current_host: false
+data:
+  company.thebrowser.Browser:
+    # General
+    currentAppIconName: neon
+    arc_quitAlwaysKeepsWindows: false
+    NSQuitAlwaysKeepsWindows: true
+    hasLaunchedBefore: true
+    shouldAutomaticallyUpdateArc: 1
+    shouldWarnBeforeQuitting: 0
+    # Arc Max
+    arcMaxAutoOptInEnabled: false
+    askOnPageEnabled: 1
+    gptSiteSearchEnabled: 1
+    hoverCardsEnabled: 1
+    renameDownloadsEnabled: 1
+    renamePinnedTabsEnabled: 1
+    instantLinksEnabled: 1
+    tidyTabsEnabled: 1

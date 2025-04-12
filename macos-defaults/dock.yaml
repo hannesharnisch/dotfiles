@@ -1,0 +1,54 @@
+---
+description: Dock
+sudo: false
+current_host: false
+kill: ["Dock"]
+data:
+  com.apple.Dock:
+    autohide: true
+    expose-group-by-app: true
+    # Tile Style
+    tilesize: 45.0
+    largesize: 68
+    magnification: true
+
+    # Minimizing applications
+    mineffect: trichter
+    minimize-to-application: true
+
+    # Animations
+    autohide-delay: 0.0
+    autohide-time-modifier: 0.25
+    launchanim: true
+    enable-spring-load-actions-on-all-items: true
+    expose-animation-duration: 0.1
+
+    show-process-indicators: true
+    show-recents: false
+    showhidden: true
+    mru-spaces: false
+    # Hot corners
+    # Possible Actions:
+    #  0: no-op
+    #  2: Mission Control
+    #  3: Show application windows
+    #  4: Desktop
+    #  5: Start screen saver
+    #  6: Disable screen saver
+    #  7: Dashboard
+    # 10: Put display to sleep
+    # 11: Launchpad
+    # 12: Notification Center
+    # 13: Lock Screen
+    # Possible Keys that have to be pressed:
+    # 0: None (Can be omitted)
+    # 1: Shift
+    # 2: Control
+    # 3: Option
+    # 4: Command
+    wvous-bl-corner: 13
+    wvous-bl-modifier: 0
+    wvous-br-corner: 12
+    wvous-br-modifier: 0
+    wvous-tr-corner: 2
+    wvous-tr-modifier: 0

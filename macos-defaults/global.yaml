@@ -1,0 +1,31 @@
+---
+description: Global Settings
+sudo: false
+current_host: false
+kill: ["Finder"]
+data:
+  NSGlobalDomain:
+    AppleLanguages:
+      - en
+      - de
+    AppleLocale: en_001@currency=eur;rg=dezzzz
+    AppleMeasurementUnits: Centimeters
+    AppleMetricUnits: true
+    AppleKeyboardUIMode: 3
+    NSAutomaticCapitalizationEnabled: true
+    NSAutomaticDashSubstitutionEnabled: false
+    NSAutomaticPeriodSubstitutionEnabled: false
+    NSAutomaticQuoteSubstitutionEnabled: false
+    NSDisableAutomaticTermination: true
+    NSPreferredWebServices:
+      NSWebServicesProviderWebSearch:
+        NSDefaultDisplayName: DuckDuckGo
+        NSProviderIdentifier: com.duckduckgo
+    NSTableViewDefaultSizeMode: 2
+    NSWindowResizeTime: 0.001
+    com.apple.mouse.tapBehavior: 1
+    com.apple.sound.beep.flash: 0
+    com.apple.springing.delay: 0.0
+    com.apple.springing.enabled: true
+    com.apple.trackpad.forceClick: true
+    shouldShowRSVPDataDetectors: false

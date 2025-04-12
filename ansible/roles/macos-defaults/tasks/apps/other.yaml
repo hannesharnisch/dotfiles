@@ -1,8 +1,0 @@
-- name: Arc Settings
-  community.general.osx_defaults:
-    domain: company.thebrowser.Browser
-    key: "{{ item.key }}"
-    type: "{{ item.type | default('int') }}"
-    value: "{{ item.value | default(1) }}"
-    state: present
-  with_items: "{{ arc }}"

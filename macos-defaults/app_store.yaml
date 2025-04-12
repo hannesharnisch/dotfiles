@@ -1,0 +1,14 @@
+---
+description: App Store
+sudo: false
+current_host: false
+data:
+  com.apple.commerce:
+    AutoUpdate: true
+    AutoUpdateRestartRequired: true
+  com.apple.SoftwareUpdate:
+    AutomaticCheckEnabled: true
+    AutomaticDownload: 1
+    ConfigDataInstall: 1
+    CriticalUpdateInstall: 1
+    ScheduleFrequency: 1
