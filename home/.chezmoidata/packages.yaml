@@ -1,0 +1,59 @@
+packages:
+  darwin:
+    brews:
+      - "dockutil"
+      - "mas"
+      - "git-lfs"
+      - "grep"
+      - "gnutls"
+      - "gnupg"
+      - "screen"
+      - "tree"
+      - "findutils"
+      - "coreutils"
+      - "moreutils"
+      - "foremost"
+      - "netcat"
+      - "wget"
+      - "curl"
+      # Coding
+      - "cmake"
+      - "kotlin"
+      - "nvm"
+      - "go"
+      - "python@3.13"
+      - "swiftlint"
+    casks:
+      - "docker"
+      - "arc" # Arc Browser
+      - "grandperspective"
+      - "1password" # 1Password
+      - "1password-cli"
+      # Coding
+      - "zed"
+      - "visual-studio-code"
+      - "postman"
+      - "jetbrains-toolbox"
+      # Uni
+      - "webex"
+      - "zotero"
+      - "microsoft-auto-update"
+      - "microsoft-word"
+      - "microsoft-excel"
+      - "microsoft-powerpoint"
+    mas:
+      - name: "Goodnotes"
+        id: 1444383602
+      - name: "Keynote"
+        id: 409183694
+      - name: "Xcode"
+        id: 497799835
+    vscode:
+      - "eamodio.gitlens"
+      - "GitHub.copilot"
+      - "GitHub.copilot-chat"
+      - "ms-python.python"
+      - "golang.go"
+      - "ms-vscode-remote.remote-containers"
+      - "ms-azuretools.vscode-docker"
+      - "ms-python.vscode-pylance"

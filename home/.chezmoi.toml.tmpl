@@ -1,0 +1,6 @@
+{{- $name := promptStringOnce . "name" "Full Name" -}}
+[data.user]
+name = {{ $name | quote }}
+
+[hooks.read-source-state.pre]
+command = "{{ .chezmoi.sourceDir }}/.chezmoiscripts/.install-password-manager.sh"

@@ -11,9 +11,7 @@ export PATH="$HOME/Library/Python/3.9/bin:$PATH"
 DOTFILES_DIR="{{ .chezmoi.sourceDir }}"
 
 # Execute ansible setup playbook
-cd $DOTFILES_DIR/ansible
-ansible-galaxy install -r requirements.yaml
-
+cd $DOTFILES_DIR/../ansible
 echo "Executing ansible setup playbook..."
-echo "You may need to insert your sudo password \n"
+echo "You have to insert your sudo password"
 ansible-playbook setup-playbook.yaml --ask-become-pass

@@ -16,7 +16,7 @@ dock:
   spaces:
     autoRearrange: false
   apps:
-    - "file://{{ HOME }}/Applications/Arc.app"
+    - "file:///Applications/Arc.app"
     - "file:///System/Applications/Calendar.app"
     - "file:///System/Applications/Reminders.app"
     - "file:///System/Applications/Notes.app/"

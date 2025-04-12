@@ -1,4 +1,0 @@
-- name: Install Homebrew Bundle
-  shell: |
-    eval "$(/opt/homebrew/bin/brew shellenv)"
-    brew bundle install -f --cleanup
