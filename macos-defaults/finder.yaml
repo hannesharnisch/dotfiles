@@ -21,7 +21,7 @@ data:
     FXICloudDriveDesktop: true
     FXICloudDriveDocuments: true
     FXICloudDriveEnabled: true
-    FXPreferredViewStyle: Nls
+    FXPreferredViewStyle: Nlsv
     NewWindowTarget: PfLo
     NewWindowTargetPath: "file:///~/"
     QuitMenuItem: true
