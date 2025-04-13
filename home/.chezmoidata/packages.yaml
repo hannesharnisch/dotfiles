@@ -28,7 +28,6 @@ packages:
       - "nvm"
       - "go"
       - "python@3.13"
-      - "swiftlint"
     casks:
       - "docker"
       - "arc" # Arc Browser
