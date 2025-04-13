@@ -2,6 +2,9 @@
 #!/bin/bash
 echo "Installing Brew Bundle"
 brew bundle --file=/dev/stdin <<EOF
+{{ range .packages.darwin.taps -}}
+brew tap {{ . | quote }}
+{{ end -}}
 {{ range .packages.darwin.brews -}}
 brew {{ . | quote }}
 {{ end -}}
