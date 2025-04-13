@@ -8,7 +8,7 @@
     msg: "dockutil is not installed"
   when: dockutil_installed.rc != 0
 
-- include_tasks: setup_dock.yaml
+- include_tasks: apply-dock-changes.yaml
 
 - name: Restart Dock
   shell: "killall Dock"

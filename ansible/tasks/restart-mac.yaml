@@ -1,0 +1,18 @@
+- name: Ask user if they want to restart the Mac (store response)
+  ansible.builtin.shell: |
+    osascript -e 'display dialog "{{ message }}" buttons {"Later", "Restart Now"} default button "Restart Now" with icon caution'
+  register: restart_dialog_response
+  changed_when: false
+
+- name: Set restart flag based on user response
+  ansible.builtin.set_fact:
+    restart_requested: "{{ True if 'Restart Now' in restart_dialog_response.stdout else False }}"
+
+- name: Debug restart decision (optional)
+  ansible.builtin.debug:
+    msg: "User chose to restart: {{ restart_requested }}"
+
+- name: Restart the Mac if user confirmed
+  ansible.builtin.shell: sudo shutdown -r now
+  become: true
+  when: restart_requested
