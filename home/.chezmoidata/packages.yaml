@@ -1,9 +1,11 @@
 packages:
   darwin:
+    taps:
+      - dsully/tap
     brews:
       # Important for setup
       - "dockutil"
-      - "dsully/tap/macos-defaults"
+      - "macos-defaults"
       - "ansible"
 
       - "mas"
