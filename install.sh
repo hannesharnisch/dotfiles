@@ -9,6 +9,7 @@ echo "Command line tools installation path: $(xcode-select -p)"
 
 # Install Homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
+# Add Homebrew to path
+eval "$(/opt/homebrew/bin/brew shellenv)"
 # Install dotfiles
 sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply hannesharnisch
