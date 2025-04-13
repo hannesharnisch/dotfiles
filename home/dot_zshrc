@@ -1,2 +1,2 @@
 #!/usr/bin/env zsh
-[ -n "$PROMPT" ] && source ~/.zprofile;
+[ -n "$PROMPT" ] && source ~/.config/zprofile;
