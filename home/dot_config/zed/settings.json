@@ -7,11 +7,25 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "autosave": "on_focus_change",
+  "auto_install_extensions": {
+    "html": true,
+    "dockerfile": true,
+    "Catppuccin": true,
+    "Catppuccin Icons": true
+  },
+  "git": {
+    "inline_blame": {
+      "enabled": true,
+      "show_commit_summary": true
+    }
+  },
   "ui_font_size": 16,
   "buffer_font_size": 16,
   "theme": {
     "mode": "system",
     "light": "Catppuccin Macchiato",
     "dark": "Catppuccin Macchiato"
-  }
+  },
+  "icon_theme": "Catppuccin Macchiato"
 }
