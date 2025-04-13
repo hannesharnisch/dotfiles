@@ -1,0 +1,10 @@
+---
+description: Input
+sudo: false
+current_host: false
+kill: ["cfprefsd"]
+data:
+  com.apple.AppleMultitouchTrackpad:
+    Clicking: 1
+  com.apple.driver.AppleBluetoothMultitouch.trackpad:
+    Clicking: 1

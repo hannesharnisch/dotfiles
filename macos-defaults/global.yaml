@@ -2,7 +2,7 @@
 description: Global Settings
 sudo: false
 current_host: false
-kill: ["Finder"]
+kill: ["Finder", "cfprefsd", "SystemUIServer"]
 data:
   NSGlobalDomain:
     AppleLanguages:

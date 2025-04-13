@@ -2,6 +2,7 @@
 description: Other Application settings
 sudo: false
 current_host: false
+kill: ["cfprefsd", "SystemUIServer"]
 data:
   com.apple.photos.shareddefaults:
     downloadAndKeepOriginals: true
