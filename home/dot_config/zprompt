@@ -1,0 +1,6 @@
+#!/usr/bin/env zsh
+
+zstyle :prompt:pure:path color 130
+zstyle :prompt:pure:prompt:success color 008
+zstyle :prompt:pure:git:branch color 242
+zstyle :prompt:pure:git:dirty color 242

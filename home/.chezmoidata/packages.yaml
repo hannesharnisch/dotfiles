@@ -7,8 +7,8 @@ packages:
       - "dockutil"
       - "macos-defaults"
       - "ansible"
-
       - "mas"
+
       - "git-lfs"
       - "grep"
       - "gnutls"
@@ -24,31 +24,31 @@ packages:
       - "curl"
       # Coding
       - "cmake"
+      - "just"
       - "kotlin"
       - "nvm"
       - "go"
-      - "python@3.13"
+      - "uv"
+      - "sqlite"
+      - "ollama"
+      # K8s management
+      - "talosctl"
+      - "kubectx"
+      - "k9s"
     casks:
-      - "docker"
       - "arc" # Arc Browser
       - "grandperspective"
       - "1password" # 1Password
       - "1password-cli"
+      - "insta360-studio"
+      - "docker"
       # Coding
+      - "claude-code"
       - "zed"
       - "visual-studio-code"
       - "postman"
-      - "jetbrains-toolbox"
-      # Uni
-      - "webex"
-      - "zotero"
-      - "microsoft-auto-update"
-      - "microsoft-word"
-      - "microsoft-excel"
-      - "microsoft-powerpoint"
+      - "intellij-idea"
     mas:
-      - name: "Goodnotes"
-        id: 1444383602
       - name: "Keynote"
         id: 409183694
       - name: "Xcode"
