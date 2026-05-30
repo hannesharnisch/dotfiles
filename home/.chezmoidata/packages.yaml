@@ -45,7 +45,7 @@ packages:
       - "1password" # 1Password
       - "1password-cli"
       - "insta360-studio"
-      - "docker"
+      - "docker-desktop"
       # Coding
       - "claude-code"
       - "zed"
