@@ -2,6 +2,7 @@ packages:
   darwin:
     taps:
       - dsully/tap
+      - fluxcd/tap
     brews:
       # Important for setup
       - "dockutil"
@@ -32,8 +33,11 @@ packages:
       - "sqlite"
       - "ollama"
       # K8s management
+      - "opentofu"
       - "talosctl"
       - "kubectx"
+      - "helm"
+      - "fluxcd/tap/flux"
       - "k9s"
     casks:
       - "arc" # Arc Browser
