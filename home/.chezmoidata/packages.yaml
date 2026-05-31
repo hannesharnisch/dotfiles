@@ -6,7 +6,7 @@ packages:
     brews:
       # Important for setup
       - "dockutil"
-      - "macos-defaults"
+      - "dsully/tap/macos-defaults"
       - "ansible"
       - "mas"
 
@@ -53,14 +53,10 @@ packages:
       - "postman"
       - "intellij-idea"
     mas:
-      - name: "Keynote"
-        id: 409183694
       - name: "Xcode"
         id: 497799835
     vscode:
       - "eamodio.gitlens"
-      - "GitHub.copilot"
-      - "GitHub.copilot-chat"
       - "ms-python.python"
       - "golang.go"
       - "ms-vscode-remote.remote-containers"
